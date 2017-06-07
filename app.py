@@ -33,15 +33,7 @@ def init(loop):
     app = web.Application(middlewares=[middlewares.middleware_factory])
     aiohttp_jinja2.setup(app,
         loader=jinja2.FileSystemLoader('./view'))
-
-    # app.router.add_route('GET', '/', mainpage.showMainPage)
-
-    # app.router.add_route('GET', '/productbuyer', mainpage.showBuyerPage)
-    # app.router.add_route('GET', '/productseller', mainpage.showSellerPage)
-    # app.router.add_route('GET', '/productmatchlist', mainpage.showMatchList)
-    # app.router.add_static('/static/', './bower_components')
-    # app.router.add_static('/static/', './node_modules')
-
+ 
     app.router.add_route('GET','/mainpage/', views.mainPage),    
     # app.router.add_route('GET','/postdata/', svr.postData),   
     app.router.add_route('GET','/data_code_view/', views.renderFun),
@@ -60,8 +52,10 @@ def init(loop):
     app.router.add_route('GET','/stratyge_model_list/', views.renderFun),  
     app.router.add_route('GET','/stratyge_new/', views.renderFun),
     app.router.add_route('GET','/stratyge_train/', views.renderFun),
-    # app.router.add_static('/statics/', './node_modules')
     app.router.add_static('/','./public')
+    app.router.add_static('/static/', './bower_components')
+    app.router.add_static('/static/', './node_modules')
+    
     srv = yield from loop.create_server(
         app.make_handler(), '0.0.0.0', 8888)
     print('Sever starts at port: 8888')
