@@ -1,0 +1,7 @@
+﻿*__pycache__
+导出原型图
+bower_components
+node_modules
+Glo*.hp
+**.pyc
+**.pyd
