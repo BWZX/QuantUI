@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block headerjs %}
+
+{% endblock %}
+{% block css %}
+{% endblock %}
+
+{% block content %}
+    <h3><span> <a href="/data_standard_list">back</a>&nbsp;|&nbsp;黄金板块数据</span></h3>
+    
+    <ul class="nav nav-tabs">
+      <li role="presentation"><a href="/data_detail">基本信息</a></li>
+      <li role="presentation" class="active"><a href="/data_code_view">代码执行</a></li>
+    </ul>
+    <br>
+    <h5><span> <a >执行</a>&nbsp;|&nbsp;<a >上传代码</a>&nbsp;|&nbsp;<a >下载代码</a>&nbsp;|&nbsp;<a >下载数据</a>&nbsp;</span></h5>
+    <iframe src="/static/editor/index.html"></iframe>
+
+{% endblock %}
+
+{% block js %}
+<script src="/static/editor/app.js"></script>  
+{% endblock %}

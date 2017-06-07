@@ -1,0 +1,6 @@
+{
+  "name": "Quant",
+  "dependencies": {
+    "echarts": "latest"
+  }
+}

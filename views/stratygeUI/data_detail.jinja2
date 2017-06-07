@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+{% block headerjs %}
+<script type="text/javascript" src="/static/Huploadify/jquery.Huploadify.js"></script>
+<script type="text/javascript">
+    $(function(){
+    var up = $('#upload').Huploadify({
+        auto:false,
+        fileTypeExts:'*.*',
+        multi:true,
+        formData:{key:123456,key2:'vvvv'},
+        fileSizeLimit:99999999999,
+        showUploadedPercent:true,
+        showUploadedSize:true,
+        removeTimeout:9999999,
+        uploader:'upload.php',
+        onUploadStart:function(file){
+            console.log(file.name+'开始上传');
+        },
+        onInit:function(obj){
+            console.log('初始化');
+            console.log(obj);
+        },
+        onUploadComplete:function(file){
+            console.log(file.name+'上传完成');
+        },
+        onCancel:function(file){
+            console.log(file.name+'删除成功');
+        },
+        onClearQueue:function(queueItemCount){
+            console.log('有'+queueItemCount+'个文件被删除了');
+        },
+        onDestroy:function(){
+            console.log('destroyed!');
+        },
+        onSelect:function(file){
+            console.log(file.name+'加入上传队列');
+        },
+        onQueueComplete:function(queueData){
+            console.log('队列中的文件全部上传完成',queueData);
+        }
+    });
+    $('#btn2').click(function(){
+        up.upload('*');
+    });
+    $('#btn3').click(function(){
+        up.cancel('*');
+    });
+    $('#btn4').click(function(){
+        //up.disable();
+        up.Huploadify('disable');
+    });
+    $('#btn5').click(function(){
+        up.ennable();
+    });
+    $('#btn6').click(function(){
+        up.destroy();
+    });
+});
+
+</script>
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/Huploadify/Huploadify.css"/>
+{% endblock %}
+
+{% block content %}
+    <h3><span> <a href="/data_standard_list">back</a>&nbsp;|&nbsp;新建定制数据集 </span></h3>
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="/data_detail">基本信息</a></li>
+      <li role="presentation"><a href="/data_code_view">代码执行</a></li>      
+    </ul>
+    <br> 
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">名称</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="name" placeholder="请输入数据集名称">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">描述</label>
+    <div class="col-sm-10">
+      <textarea  class="form-control" rows="3" id="description" placeholder="请输入数据集描述。"></textarea> 
+    </div>
+  </div>
+  <div id="upload"></div>
+</form>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

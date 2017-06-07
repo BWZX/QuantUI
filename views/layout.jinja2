@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    {% for item in main.css %}
+    <link rel="stylesheet" href="{{item}}">
+    {% endfor %}
+
+        {% for item in main.headerjs %}
+    <script src="{{item}}"></script>
+    {% endfor %}
+
+        {% block headerjs %}{% endblock %}
+
+        {% block css %}{% endblock %}
+</head>
+<body> 
+
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-2 bg-primary" style="height: 80px; padding-top: 5px; margin-bottom: 5px;">
+            <img src="/static/image/logo.png">
+
+        </div>        
+        <div class="col-xs-4 bg-primary" style="height: 80px; padding-top: 35px; margin-bottom: 5px;">
+        <div class="btn-group btn-group-justified" role="group"></div>        
+            <a class="layoutAfont" href="/mainpage">行情浏览</a>
+            <span class="layoutAfont">|</span>
+            <a class="layoutAfont" href="/first/">策略开发</a>
+        
+        </div>
+        <div class="col-xs-6 bg-primary" style="height: 80px; margin-bottom: 5px;">
+        </div>
+
+         <div class="col-xs-1 bg-primary" style="margin-bottom: 5px; height: 550px;">
+            <div style="margin-bottom: 5px;">
+            <a class="layoutSidebarfont" href="/data_standard_list">数据集</a></div>
+            <div style="margin-bottom: 5px;"><a class="layoutSidebarfont" href="/stratyge_list">价值预测</a></div>
+            <div style="margin-bottom: 5px;"><a class="layoutSidebarfont">策略决策</a></div>  
+            <div style="margin-bottom: 5px;"><a class="layoutSidebarfont">回测验证</a></div>
+        </div>
+
+        <div class="col-xs-11 bg-success" style="margin-bottom: 5px; height: 550px;">
+            {% block content %}{% endblock %}            
+        </div>        
+    </div>
+    </div>
+    {% for item in main.footerjs %}
+    <script src="{{item}}"></script>
+    {% endfor %}
+
+        {% block js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,7 @@
+.layoutAfont{color:#000093; font-family: 宋体; font-size: 24px;}/*链接设置*/
+.layoutAfont:visited{color:#000079; font-family: 宋体; font-size: 24px;}/*访问过的链接设置*/
+.layoutAfont:hover{color:#AAAAFF; font-family: 宋体; font-size: 24px;}/*鼠标放上的链接设置*/
+
+.layoutSidebarfont{color:#000093; font-family: 宋体; font-size: 20px;}/*链接设置*/
+.layoutSidebarfont:visited{color:#000079; font-family: 宋体; font-size: 20px;}/*访问过的链接设置*/
+.layoutSidebarfont:hover{color:#AAAAFF; font-family: 宋体; font-size: 20px;}/*鼠标放上的链接设置*/

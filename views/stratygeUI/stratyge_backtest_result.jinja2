@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block headerjs %}
+
+{% endblock %}
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<h3><span> <a href="/stratyge_list">back</a>&nbsp;|&nbsp;黄金板块数据</span></h3>
+<ul class="nav nav-tabs">
+      <li role="presentation"><a href="/stratyge_detail">基本信息</a></li>
+      <li role="presentation"><a href="/stratyge_train">模型训练</a></li>
+      <li role="presentation"><a href="/stratyge_model_list">模型列表</a></li>
+      <li role="presentation"><a href="/stratyge_backtest_code">回测代码</a></li>
+      <li role="presentation" class="active"><a href="/stratyge_backtest_result" >回测结果</a></li>      
+    </ul>
+<br>
+
+<table class="table table-hover">
+    <tr>
+        <th class="active">模型名称</th>
+        <th class="success">训练集</th>
+        <th class="warning">模型描述</th>
+        <th class="danger">回撤结果</th>
+        <th class="info">操作</th>
+    </tr>
+
+    <tr>
+        <td class="active">...</td>
+        <td class="success">...</td>
+        <td class="warning">...</td>
+        <td class="danger">...</td>        
+        <td class="success">
+            <a href="#">删除</a>            
+        </td>
+    </tr>
+</table>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

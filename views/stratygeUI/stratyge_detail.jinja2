@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block headerjs %}
+
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/Huploadify/Huploadify.css"/>
+{% endblock %}
+
+{% block content %}
+    <h3><span> <a href="/stratyge_list">back</a>&nbsp;|&nbsp;10元线性回归</span></h3>
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="/stratyge_detail">基本信息</a></li>
+      <li role="presentation"><a href="/stratyge_train">模型训练</a></li>
+      <li role="presentation"><a href="/stratyge_model_list">模型列表</a></li>
+      <li role="presentation"><a href="/stratyge_backtest_code">回测代码</a></li>
+      <li role="presentation"><a href="/stratyge_backtest_result">回测结果</a></li>      
+    </ul>
+    <br> 
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">名称</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="name" placeholder="请输入数据集名称">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">描述</label>
+    <div class="col-sm-10">
+      <textarea  class="form-control" rows="3" id="description" placeholder="请输入数据集描述。"></textarea> 
+    </div>
+  </div>
+  
+</form>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
